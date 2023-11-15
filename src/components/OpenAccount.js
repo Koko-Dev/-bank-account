@@ -1,8 +1,8 @@
-export default function OpenAccount() {
+export default function OpenAccount( { dispatch, onActive } ) {
   return (
       <button
-          onClick={ () => { console.log( 'Open Account' );} }
-          disabled={ false }
+          onClick={ () => dispatch( { type: 'open' } ) }
+          disabled={ onActive }
       >
         Open Account
       </button> );

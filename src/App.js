@@ -8,16 +8,29 @@ import CloseAccount from './components/CloseAccount';
 
 
 const initialState = {
-  balance: 0, loan: 0, isActive: false,
+  balance: 0, loan: 0, isActive: false, deposit: 0, withdraw: 0, payLoan: 0, closeAccount: false, openAccount: false,
 };
 
 function reducer( state, action ) {
-
+  
+  switch ( action.type ) {
+    case 'open':
+      return {
+        ...state, openAccount: true, balance: 400, isActive: true,
+      };
+    
+    default:
+      throw new Error( 'Action unknown' );
+  }
 }
 
 
 function App() {
-  const { balance, loan, isActive } = useReducer( reducer, initialState );
+  const [
+    {
+      balance, loan, isActive, deposit, withdraw, payLoan, closeAccount, openAccount,
+    }, dispatch
+  ] = useReducer( reducer, initialState );
   return (
       <div className='App'>
         <h1>useReducer Bank Account</h1>
@@ -25,22 +38,22 @@ function App() {
         <p>Loan: X</p>
         
         <p>
-          <OpenAccount />
+          <OpenAccount dispatch={ dispatch } onActive={ isActive } />
         </p>
         <p>
-          <Deposit />
+          <Deposit onActive={ isActive } />
         </p>
         <p>
-          <Withdraw />
+          <Withdraw onActive={ isActive } />
         </p>
         <p>
-          <RequestLoan />
+          <RequestLoan onActive={ isActive } />
         </p>
         <p>
-          <PayLoan />
+          <PayLoan onActive={ isActive } />
         </p>
         <p>
-          <CloseAccount />
+          <CloseAccount onActive={ isActive } />
         </p>
       </div> );
 }
