@@ -1,7 +1,7 @@
-export default function Withdraw( { onActive } ) {
+export default function Withdraw( { onActive, dispatch } ) {
   return (
       <button
-          onClick={ () => { console.log( 'Withdraw 50' );} }
+          onClick={ () => dispatch( { type: 'withdraw' } ) }
           disabled={ !onActive }
       >
         Withdraw 50

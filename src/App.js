@@ -22,6 +22,13 @@ function reducer( state, action ) {
       return {
         ...state, balance: state.balance + 150
       };
+    case 'withdraw':
+      return {
+        ...state,
+        balance: state.balance >= 50
+                 ? state.balance - 50
+                 : state.balance
+      };
     
     default:
       throw new Error( 'Action unknown' );
@@ -48,7 +55,7 @@ function App() {
           <Deposit dispatch={ dispatch } onActive={ isActive } />
         </p>
         <p>
-          <Withdraw onActive={ isActive } />
+          <Withdraw dispatch={ dispatch } onActive={ isActive } />
         </p>
         <p>
           <RequestLoan onActive={ isActive } />
