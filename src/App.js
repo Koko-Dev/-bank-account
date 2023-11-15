@@ -1,9 +1,18 @@
+import { useReducer } from 'react';
+import OpenAccount from './components/OpenAccount';
+
+
 const initialState = {
   balance: 0, loan: 0, isActive: false,
 };
 
+function reducer(state, action) {
+
+}
+
 
 function App() {
+  const { balance, loan, isActive } = useReducer(reducer, initialState)
   return (
       <div className='App'>
         <h1>useReducer Bank Account</h1>
@@ -11,7 +20,7 @@ function App() {
         <p>Loan: X</p>
         
         <p>
-          <button>Open Account</button>
+          <OpenAccount />
         </p>
         <p>
           <button>Deposit 150</button>
