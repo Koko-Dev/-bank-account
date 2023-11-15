@@ -1,5 +1,8 @@
 import { useReducer } from 'react';
 import OpenAccount from './components/OpenAccount';
+import Deposit from './components/Deposit';
+import Withdraw from './components/Withdraw';
+import RequestLoan from './components/RequestLoan';
 
 
 const initialState = {
@@ -23,13 +26,13 @@ function App() {
           <OpenAccount />
         </p>
         <p>
-          <button>Deposit 150</button>
+          <Deposit />
         </p>
         <p>
-          <button>Withdraw 50</button>
+          <Withdraw />
         </p>
         <p>
-          <button>Request a loan of 5000</button>
+          <RequestLoan />
         </p>
         <p>
           <button>Pay loan</button>
