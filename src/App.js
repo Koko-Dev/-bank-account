@@ -3,6 +3,7 @@ import OpenAccount from './components/OpenAccount';
 import Deposit from './components/Deposit';
 import Withdraw from './components/Withdraw';
 import RequestLoan from './components/RequestLoan';
+import PayLoan from './components/PayLoan';
 
 
 const initialState = {
@@ -35,7 +36,7 @@ function App() {
           <RequestLoan />
         </p>
         <p>
-          <button>Pay loan</button>
+          <PayLoan />
         </p>
         <p>
           <button>Close Account</button>
