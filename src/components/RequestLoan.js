@@ -1,4 +1,4 @@
-export default function RequestLoan({ onActive}) {
+export default function RequestLoan( { onActive } ) {
   return (
       <button
           onClick={ () => { console.log( 'Request a loan of 5000' );} }

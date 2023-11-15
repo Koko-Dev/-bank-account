@@ -1,4 +1,4 @@
-export default function Withdraw({onActive}) {
+export default function Withdraw( { onActive } ) {
   return (
       <button
           onClick={ () => { console.log( 'Withdraw 50' );} }

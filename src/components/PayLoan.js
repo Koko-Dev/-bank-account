@@ -1,4 +1,4 @@
-export default function PayLoan({onActive}) {
+export default function PayLoan( { onActive } ) {
   return (
       <button
           onClick={ () => { console.log( 'Pay loan' );} }
