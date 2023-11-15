@@ -18,6 +18,10 @@ function reducer( state, action ) {
       return {
         ...state, openAccount: true, balance: 400, isActive: true,
       };
+    case 'deposit':
+      return {
+        ...state, balance: state.balance + 150
+      };
     
     default:
       throw new Error( 'Action unknown' );
@@ -34,14 +38,14 @@ function App() {
   return (
       <div className='App'>
         <h1>useReducer Bank Account</h1>
-        <p>Balance: X</p>
-        <p>Loan: X</p>
+        <p>Balance: { balance }</p>
+        <p>Loan: { loan }</p>
         
         <p>
           <OpenAccount dispatch={ dispatch } onActive={ isActive } />
         </p>
         <p>
-          <Deposit onActive={ isActive } />
+          <Deposit dispatch={ dispatch } onActive={ isActive } />
         </p>
         <p>
           <Withdraw onActive={ isActive } />

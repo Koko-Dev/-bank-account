@@ -1,7 +1,7 @@
-export default function Deposit( { onActive } ) {
+export default function Deposit( { onActive, dispatch } ) {
   return (
       <button
-          onClick={ () => { console.log( 'Deposit 150' );} }
+          onClick={ () => dispatch( { type: 'deposit' } ) }
           disabled={ !onActive }
       >
         Deposit 150
