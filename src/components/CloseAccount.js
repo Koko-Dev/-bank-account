@@ -1,8 +1,8 @@
-export default function CloseAccount() {
+export default function CloseAccount({onActive}) {
   return (
       <button
           onClick={ () => { console.log( 'Close Account' );} }
-          disabled={ false }
+          disabled={ !onActive }
       >
         Close Account
       </button> );
