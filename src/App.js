@@ -4,19 +4,20 @@ import Deposit from './components/Deposit';
 import Withdraw from './components/Withdraw';
 import RequestLoan from './components/RequestLoan';
 import PayLoan from './components/PayLoan';
+import CloseAccount from './components/CloseAccount';
 
 
 const initialState = {
   balance: 0, loan: 0, isActive: false,
 };
 
-function reducer(state, action) {
+function reducer( state, action ) {
 
 }
 
 
 function App() {
-  const { balance, loan, isActive } = useReducer(reducer, initialState)
+  const { balance, loan, isActive } = useReducer( reducer, initialState );
   return (
       <div className='App'>
         <h1>useReducer Bank Account</h1>
@@ -39,7 +40,7 @@ function App() {
           <PayLoan />
         </p>
         <p>
-          <button>Close Account</button>
+          <CloseAccount />
         </p>
       </div> );
 }
