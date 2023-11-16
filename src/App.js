@@ -8,7 +8,15 @@ import CloseAccount from './components/CloseAccount';
 
 
 const initialState = {
-  balance: 0, loan: 0, isActive: false, deposit: 0, withdraw: 0, payLoan: 0, closeAccount: false, openAccount: false, debt: false,
+  balance: 0,
+  loan: 0,
+  isActive: false,
+  deposit: 0,
+  withdraw: 0,
+  payLoan: 0,
+  closeAccount: false,
+  openAccount: false,
+  debt: false,
 };
 
 function reducer( state, action ) {
@@ -33,9 +41,11 @@ function reducer( state, action ) {
       return {
         ...state,
         debt: action.payload,
-        balance: state.debt ? state.balance : state.balance + 5000,
+        balance: state.debt
+                 ? state.balance
+                 : state.balance + 5000,
         loan: 5000
-      }
+      };
     
     default:
       throw new Error( 'Action unknown' );
@@ -65,7 +75,7 @@ function App() {
           <Withdraw dispatch={ dispatch } onActive={ isActive } />
         </p>
         <p>
-          <RequestLoan dispatch={ dispatch } onActive={ isActive } debt={debt}/>
+          <RequestLoan dispatch={ dispatch } onActive={ isActive } debt={ debt } />
         </p>
         <p>
           <PayLoan onActive={ isActive } />
