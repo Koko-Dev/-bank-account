@@ -1,4 +1,4 @@
-# bank-account
+# bank-account:   My answer to Challenge from Jonas S. React course
 
 ## Available Scripts
 
