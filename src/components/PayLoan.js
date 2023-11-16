@@ -1,7 +1,7 @@
-export default function PayLoan( { onActive } ) {
+export default function PayLoan( { onActive, dispatch, debt } ) {
   return (
       <button
-          onClick={ () => { console.log( 'Pay loan' );} }
+          onClick={ () => dispatch( { type: 'payLoan', payload: false } ) }
           disabled={ !onActive }
       >
         Pay loan

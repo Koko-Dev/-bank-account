@@ -46,6 +46,17 @@ function reducer( state, action ) {
                  : state.balance + 5000,
         loan: 5000
       };
+    case 'payLoan':
+      return {
+        ...state,
+        debt: action.payload,
+        balance: state.balance >= 5000
+                 ? state.balance - 5000
+                 : state.balance,
+        loan: state.loan === 5000 && state.balance >= 5000
+              ? state.loan = 0
+              : state.loan
+      };
     
     default:
       throw new Error( 'Action unknown' );
@@ -78,7 +89,7 @@ function App() {
           <RequestLoan dispatch={ dispatch } onActive={ isActive } debt={ debt } />
         </p>
         <p>
-          <PayLoan onActive={ isActive } />
+          <PayLoan dispatch={ dispatch } onActive={ isActive } debt={ debt } />
         </p>
         <p>
           <CloseAccount onActive={ isActive } />
