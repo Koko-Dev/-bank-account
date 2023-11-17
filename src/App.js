@@ -28,7 +28,7 @@ function reducer( state, action ) {
       };
     case 'deposit':
       return {
-        ...state, balance: state.balance + 150
+        ...state, balance: state.balance + action.payload
       };
     case 'withdraw':
       return {
