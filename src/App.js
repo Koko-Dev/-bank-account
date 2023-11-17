@@ -24,7 +24,7 @@ function reducer( state, action ) {
   switch ( action.type ) {
     case 'open':
       return {
-        ...state, openAccount: true, balance: 400, isActive: true,
+        ...state, openAccount: true, balance: action.payload, isActive: true,
       };
     case 'deposit':
       return {
